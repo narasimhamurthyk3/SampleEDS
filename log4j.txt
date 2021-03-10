@@ -1,0 +1,30 @@
+################ DBMigration Job Logger ######################
+log4j.appender.ExcelFileReports=org.apache.log4j.RollingFileAppender
+
+log4j.appender.ExcelFileReports.File=C:\\FileNet\\QCDMSEDS\\Logs\\SystemOut.log
+# ***** Max file size is set to 50000KB
+log4j.appender.ExcelFileReports.MaxFileSize=50000KB
+# ***** Keep one backup file
+log4j.appender.ExcelFileReports.MaxBackupIndex=50
+# ***** DEA uses PatternLayout.
+log4j.appender.ExcelFileReports.layout=org.apache.log4j.PatternLayout
+#log4j.appender.ExcelReaderXSSF.layout.ConversionPattern=   %-5p [%d{ISO8601}] : %C{1}.%M : %m%n
+log4j.appender.ExcelFileReports.layout.ConversionPattern=   %-5p [%d{ISO8601}] : %C{1}.%M :%X{ProjectId}: %m%n
+
+################ DBMigration Error Logger #######################
+#log4j.appender.ExcelReaderXSSFErr=org.apache.log4j.RollingFileAppender
+#log4j.appender.ExcelReaderXSSFErr.File=C:\\DBMigrationLogs\\Logs\\DBMigration_Error.log
+
+
+# ***** Max file size is set to 50000KB
+#log4j.appender.ExcelReaderXSSFErr.MaxFileSize=50000KB
+# ***** Keep one backup file
+#log4j.appender.ExcelReaderXSSFErr.MaxBackupIndex=50
+# ***** DEA uses PatternLayout.
+#log4j.appender.ExcelReaderXSSFErr.layout=org.apache.log4j.PatternLayout
+#log4j.appender.ExcelReaderXSSFErr.layout.ConversionPattern=   %-5p [%d{ISO8601}] : %C{1}.%M : %m%n
+#****** Logger
+
+log4j.logger.com.db.filenet.biocon=info,ExcelFileReports
+#log4j.logger.com.sbi=info,ExcelFileReports
+#log4j.logger.com.sbi=error,ExcelReaderXSSFErr
