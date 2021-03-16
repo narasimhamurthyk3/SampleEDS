@@ -1,0 +1,96 @@
+[{
+	"symbolicName": "Country",
+	"hidden": false,
+	"required": true,
+	"choiceList": {
+		"displayName": "CountryNames",
+		"choices": [{
+			"displayName": "INDIA",
+			"value": "INDIA"
+		},
+		{
+			"displayName": "CANADA",
+			"value": "CANADA"
+		}
+		]
+	},
+	"hasDependentProperties": true
+},{
+	"symbolicName": "State",
+	"hidden": false,
+	"required": true,
+	"dependentOn": "Country",
+	"dependentValue": "INDIA",
+	"choiceList": {
+		"displayName": "StateNames",
+		"choices": [{
+			"displayName": "KARNATAKA",
+			"value": "KARNATAKA"
+		},
+		{
+			"displayName": "TAMILNADU",
+			"value": "TAMILNADU"
+		}
+		]
+	},
+	"hasDependentProperties": true
+},
+{
+	"symbolicName": "State",
+	"hidden": false,
+	"required": true,
+	"dependentOn": "Country",
+	"dependentValue": "CANADA",
+	"choiceList": {
+		"displayName": "States",
+		"choices": [{
+			"displayName": "NOVA",
+			"value": "NOVA"
+		},
+		{
+			"displayName": "SCOTIA",
+			"value": "SCOTIA"
+		}
+		]
+	},
+	"hasDependentProperties": true
+},
+
+{
+	"symbolicName": "Taluk",
+	"hidden": false,
+	"required": true,
+	"displayMode" : "readonly",
+	"dependentOn": "State",
+	"dependentValue": "KARNATAKA",
+	"value": "KOLAR"
+},
+{
+	"symbolicName": "Taluk",
+	"hidden": false,
+	"required": true,
+	"displayMode" : "readonly",
+	"dependentOn": "State",
+	"dependentValue": "TAMILNADU",
+	"value": "HOSUR"
+},
+{
+	"symbolicName": "Taluk",
+	"hidden": false,
+	"required": true,
+	"displayMode" : "readonly",
+	"dependentOn": "State",
+	"dependentValue": "NOVA",
+	"value": "NOVA-TALUK"
+},
+{
+	"symbolicName": "Taluk",
+	"hidden": false,
+	"required": true,
+	"displayMode" : "readonly",
+	"dependentOn": "State",
+	"dependentValue": "SCOTIA",
+	"value": "SCOTIA-TALUK"
+}
+
+]
