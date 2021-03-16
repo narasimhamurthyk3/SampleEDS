@@ -1,0 +1,3 @@
+InputStream objectTypesStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//ObjectTypes.json");
+InputStream propertyDataStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//"+objectType.replace(' ', '_')+"_PropertyData"+".json");
+propertyDataStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//"+objectType.replace(' ', '_')+"_PropertyData.json");
