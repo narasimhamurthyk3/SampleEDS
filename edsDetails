@@ -1,3 +1,6 @@
 InputStream objectTypesStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//ObjectTypes.json");
 InputStream propertyDataStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//"+objectType.replace(' ', '_')+"_PropertyData"+".json");
 propertyDataStream = new FileInputStream("C://Users//Administrator//Desktop//config-files//"+objectType.replace(' ', '_')+"_PropertyData.json");
+
+
+https://www.ibm.com/support/knowledgecenter/en/SSNW2F_5.5.0/com.ibm.p8.ce.dev.ce.doc/workflow_procedures.htm
