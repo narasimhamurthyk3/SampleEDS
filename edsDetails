@@ -15,3 +15,8 @@ EDS CONFIGURATION
 Plugin URL
 http://ibmdemo16:9080/eds
 https://ecm-sample-app.eu-gb.mybluemix.net
+
+
+http://ecm-sample-app.eu-gb.mybluemix.net/types
+
+https://ecm-sample-app.eu-gb.mybluemix.net/types?repositoryId=OS1
