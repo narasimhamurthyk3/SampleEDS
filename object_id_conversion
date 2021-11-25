@@ -15,3 +15,18 @@ SELECT FILE_GUID, CASEIDENTIFIER, SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{','
     || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 17, 4)
     || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 21, 12)
     AS FN_FORMAT FROM DBO.STG_POLICY_FILE FETCH FIRST 10 ROWS ONLY WITH UR
+
+
+
+select '{' concat  upper(VARCHAR_FORMAT_BIT(
+cast(substr(c.Object_id, 4, 1) concat
+substr(c.Object_id, 3, 1) concat
+substr(c.Object_id, 2, 1)  concat
+substr(c.Object_id, 1, 1)  concat
+substr(c.Object_id, 6, 1)  concat
+substr(c.Object_id, 5, 1)  concat
+substr(c.Object_id, 8, 1)  concat
+substr(c.Object_id, 7, 1)  concat
+substr(c.Object_id, 9) as char(16)), 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')) concat '}' as guid from LATOS1.container c 
+where UAE86_WORKITEMTYPECODE=3  and
+U35D6_OGI_WORKITEMID=2342 and U9AB8_COUNTRYCODE='060' ;
