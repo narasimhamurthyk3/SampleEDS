@@ -1,0 +1,17 @@
+
+CONVERTION
+FROM OBJECT_ID TO GUID
+select OBJECT_ID,UPPER('{'||HEX(SUBSTR(doc.OBJECT_ID,4,1)||SUBSTR(doc.OBJECT_ID,3,1)||SUBSTR(doc.OBJECT_ID,2,1)||SUBSTR(doc.OBJECT_ID,1,1))||'-'||HEX(SUBSTR(doc.OBJECT_ID,6,1) || SUBSTR(doc.OBJECT_ID,5,1)) ||'-' ||HEX(SUBSTR(doc.OBJECT_ID,8,1)||SUBSTR(doc.OBJECT_ID,7,1))||'-' ||HEX(SUBSTR(doc.OBJECT_ID,9,2))||'-' ||HEX(SUBSTR(doc.OBJECT_ID,11,6))||'}') AS GUID from aptos1.annotation doc where object_id is not null fetch first 10 rows only;
+
+FROM GUID TO OBJECT_ID
+SELECT FILE_GUID, CASEIDENTIFIER, SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 7, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 5, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 3, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 1, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 11, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 9, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 15, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 13, 2)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 17, 4)
+    || SUBSTR(REPLACE(REPLACE(REPLACE(FILE_GUID,'{',''),'}',''),'-',''), 21, 12)
+    AS FN_FORMAT FROM DBO.STG_POLICY_FILE FETCH FIRST 10 ROWS ONLY WITH UR
