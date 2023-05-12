@@ -47,7 +47,7 @@ public class CsvLoad {
 			System.out.println();
 			String sqlStmt = "SELECT [Id], [DocumentTitle],[DateCreated]  FROM  [DOCUMENT] WHERE [sortCode] ="
 					+ "'" + map.get("SORT_CODE") + "' AND [accountNumber] = '" + map.get("ACCOUNT_NUMBER") + "' AND [DateCreated] >="
-					+ map.get("FROM_DATE") + " AND  [DateCreated] <=" + map.get("TO_DATE") + " and RecordClassCode='LD1600'";			
+					+ map.get("FROM_DATE") + " AND  [DateCreated] <=" + map.get("TO_DATE");			
 			System.out.println(sqlStmt);
 		}
 	}
