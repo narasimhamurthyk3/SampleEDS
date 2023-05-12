@@ -1,17 +1,18 @@
-
-package com.natwest.ecm.si;
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import com.natwest.ecm.si.util.DateUtil;
+package com.test;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CsvLoad {
 
 	public static void main(String[] args) throws IOException {
-		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-		DateUtil dateUtil = new DateUtil();
-		BufferedReader reader = new BufferedReader(new FileReader(new File(
-				"C:\\Users\\knbbd\\MURTHY\\RBS\\workspaces\\GDPRIPMIntegration\\DeleteRecords\\input\\IPMD_RETUKB03_CI033967.csv")));
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();		
+		BufferedReader reader = new BufferedReader(new FileReader(new File("\\DeleteRecords\\input\\IPMD_RETUKB03_CI033967.csv")));
 		reader.readLine();// ignore header
 		String headerFromConfig1 = "IPM_RECORD_ID,SORT_CODE,ACCOUNT_NUMBER,FROM_DATE,TO_DATE";
 		
