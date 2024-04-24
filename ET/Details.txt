@@ -2,3 +2,5 @@ https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
 
 https://support.evantage.ca/hc/en-us/articles/227841147-eVantage-Bookshelf-Download-Page
 https://evantage.gilmoreglobal.com/#/
+
+https://awsvirtual.webex.com/awsvirtual-en/url.php?frompanel=false&gourl=https%3A%2F%2Fus-east-1.student.classrooms.aws.training%2Fclass%2F4vfCYQgQPs6LQ139PyXidh
